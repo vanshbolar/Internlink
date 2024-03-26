@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="form.css">
+     
+    </head>
+    <body>
+<div class="container my-5" style="background-color: #f1f1f1;">
+    <div class="row">
+        <div class="col-md-13" >
+            <div class="main-img" >
+                <img class="img-fluid" src="https://thebrandhopper.com/wp-content/uploads/2020/11/Accenture-PowerPoint-Presentation-Slide-Examples-1.jpg" alt="company image" style="height: 400; width: 1500;"> 
+            </div>
+        </div>
+        <div class="col-md-13">
+            <div class="main-description my-1">
+                <div class="name text-bold">
+                  <br>
+                    ACCENTURE
+                </div>
+                <div class="product-title text-bold my-3">
+                    DESCRIPTION<br>
+                    Accenture is a global professional services firm providing a broad range of services and solutions in strategy, consulting, digital, technology, and operations. Founded in 1989, Accenture has grown to become one of the largest consulting firms in the world, with operations spanning across more than 200 cities in over 120 countries.
+The company is renowned for its expertise in helping clients harness the power of technology and innovation to drive business transformation and achieve high performance. Accenture serves clients in various industries, including but not limited to, banking and financial services, healthcare, telecommunications, consumer goods, energy, and utilities.
+                </div>
+            </div>
+            <div class="product-details my-4">
+                <p class="details-title text-color mb-1">INTERNSHIP NAME<br> Software Engineering Internship</p>
+                <br>
+                <p class="description">DESCRIPTION OF INTERNSHIP<br> This program is geared towards aspiring software engineers and developers. Interns may work on coding, testing, and debugging software applications, as well as collaborating with cross-functional teams to deliver high-quality software solutions.</p>
+            </div>
+            <div class="delivery my-4">
+                <p class="font-weight-bold mb-0">DURATON<br>60 Days </p>
+                <br>
+                <p>TIME <br> Daily 5 Hours</p>
+            </div>
+            
+            <!-- The form -->
+         <div class="Apply"> 
+          <button  onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Apply now</button>
+        </div>  
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+    </div>
+
+    <div class="container">
+      <label for="name"><b>Name</b></label>
+      <input type="text" placeholder="Enter your name" name="name" required>
+
+      <label for="regno"><b>Reg no</b></label>
+      <input type="text" placeholder="Enter your Reg no" name="regno" required>
+        <br><br>
+      <label for="mentor"><b>Select a Mentor</b></label>
+      <select name="mentor" >
+        <option value="mentor 1">mentor 1</option>
+        <option value="mentor 2">mentor 2</option>
+        <option value="mentor 3">mentor 3</option>
+        <option value="mentor 4">mentor 4</option>
+      </select>
+      <br>
+      <br>
+      <label for="cname"><b>Company name</b></label>
+      <input type="text" placeholder="Enter company name" name="cname" required>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <button type="submit" value="submit" onclick="document.getElementById('id01').style.display='none'" class="submitbtn">Submit</button>
+  </form>
+</div>
+
+              </div>
+              </div>
+              </div>
+
+<script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"/></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js" integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#" sryle >Internlinks Admin Panel</a>
+</nav>
+
+<div class="container mt-4">
+    <div id="student" class="section">
+        <h2 class="section-title">Student Information</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <button id="viewStudents" class="btn btn-info">View Students</button>
+                <div id="studentsData" class="mt-3"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="company" class="section">
+        <h2 class="section-title">Company Information</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <button id="viewCompanies" class="btn btn-info">View Companies</button>
+                <div id="companiesData" class="mt-3"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="mentor" class="section">
+        <h2 class="section-title">Mentor Information</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <button id="viewMentors" class="btn btn-info">View Mentors</button>
+                <div id="mentorsData" class="mt-3"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="report" class="section">
+        <h2 class="section-title">Report Information</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <button id="viewReports" class="btn btn-info">View Reports</button>
+                <div id="reportsData" class="mt-3"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        // View Students
+        $("#viewStudents").click(function(){
+            $.get("view_students.php", function(response){
+                $("#studentsData").html(response);
+            });
+        });
+
+        // View Companies
+        $("#viewCompanies").click(function(){
+            $.get("view_companies.php", function(response){
+                $("#companiesData").html(response);
+            });
+        });
+
+        // View Mentors
+        $("#viewMentors").click(function(){
+            $.get("view_mentors.php", function(response){
+                $("#mentorsData").html(response);
+            });
+        });
+
+        // View Reports
+        $("#viewReports").click(function(){
+            $.get("view_reports.php", function(response){
+                $("#reportsData").html(response);
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
