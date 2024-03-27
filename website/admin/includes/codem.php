@@ -4,12 +4,13 @@
 
 if(isset($_POST['save_btn']))
 {
+    $mid=$_POST['mid'];
     $username=$_POST['username'];
     $password=$_POST['password'];
     $stream=$_POST['stream'];
     
 
-    $insert_query = "INSERT INTO mentor (username,password,stream) VALUES('$username','$password','$stream')";
+    $insert_query = "INSERT INTO mentor (mid,username,password,stream) VALUES('$mid','$username','$password','$stream')";
     $insert_query_run = mysqli_query($connection,$insert_query);
 
     if($insert_query_run){

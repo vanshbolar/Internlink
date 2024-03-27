@@ -6,18 +6,16 @@ include('./header.php');
 <div class="container-fluid py-4">
     <div class="row">
         <div class="col-lg-7 position-relative z-index-2">
-            <div class="card card-plain mb-4">
-                <div class="card-body p-3">
+
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="d-flex flex-column h-100">
-                                <h2 class="font-weight-bolder mb-0">Student Info</h2>
+                                <h2 class="font-weight-bolder mb-0">Registered Students</h2>
                             </div>
 
                         </div>
                     </div>
-                </div>
-            </div>
+
 
 
 
@@ -57,7 +55,6 @@ if(isset($_SESSION['status']) && $_SESSION['status'] !='')
       <th scope="col">Regno</th>
       <th scope="col">Email</th>
       <th scope="col">Stream</th>
-      <th scope="col">Mentor</th>
       <th scope="col">Company</th>
    
     </tr>
@@ -79,7 +76,6 @@ if(isset($_SESSION['status']) && $_SESSION['status'] !='')
                 <td><?php echo $row['regno']; ?></td>
                 <td><?php echo $row['email']; ?></td>
                 <td><?php echo $row['stream']; ?></td>
-                <td><?php echo $row['mentor']; ?></td>
                 <td><?php echo $row['cname']; ?></td>
                 
             </tr>

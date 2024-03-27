@@ -2,14 +2,8 @@
 
 include('./internlink.php');
 ?>
-<div id="myBtnContainer" class="button" style="align-content: center;">
-            <label for="dept">CATEGORIES -></label>
-            <button class="btn active" onclick="filterSelection('all')">All</button>
-            <button class="btn"  onclick="filterSelection('BCA')">BCA</button>
-            <button class="btn"  onclick="filterSelection('BA')">BA</button>
-            <button class="btn"  onclick="filterSelection('BCOM')">BCOM</button>
-            <button class="btn"  onclick="filterSelection('BVOC')">BVOC</button>
-        </div>
+
+
     </main>
 
 

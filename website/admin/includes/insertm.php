@@ -11,7 +11,7 @@ include('./header.php');
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="d-flex flex-column h-100">
-                                <h2 class="font-weight-bolder mb-0">Student Info</h2>
+                                <h2 class="font-weight-bolder mb-0">Mentor Info</h2>
                             </div>
 
                         </div>
@@ -35,6 +35,10 @@ include('./header.php');
     <div class="card-body">
 
     <form action="./codem.php" method="POST">
+    <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Mid</label>
+    <input type="text" class="form-control" name="mid" id="exampleInputEmail1" required>
+  </div>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Name</label>
     <input type="text" class="form-control" name="username" id="exampleInputEmail1" required>
@@ -45,7 +49,7 @@ include('./header.php');
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Stream</label>
-    <input type="email" class="form-control" name="stream" id="exampleInputPassword1" required>
+    <input type="text" class="form-control" name="stream" id="exampleInputPassword1" required>
   </div>
 
   <button type="submit" name="save_btn" class="btn btn-primary">Submit</button>

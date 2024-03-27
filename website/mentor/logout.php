@@ -7,4 +7,3 @@ if(session_destroy())
 header("Location: http://localhost/internlink/website/login.php");
 }
 ?> 
-

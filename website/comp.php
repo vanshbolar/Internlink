@@ -1,5 +1,4 @@
 <?php
-
 include('./internlink.php');
 ?>
 <!DOCTYPE html>
@@ -58,111 +57,72 @@ include('./internlink.php');
     
    
 
- <?php
-        $select_query="SELECT * FROM `intinfo`";
-        $result_query=mysqli_query($con,$select_query);
+    <?php
+    $select_query = "SELECT  * FROM `intinfo` ";
+    $result_query = mysqli_query($con, $select_query);
 
-        while($row=mysqli_fetch_assoc($result_query))
-        {
-          $cid=$row['cid'];
-          $cname=$row['cname'];
-          $cdesc=$row['cdesc'];
-          $idesc=$row['idesc'];
-          $duration=$row['duration'];
-          $time=$row['time'];
-        echo"<div class='container fs-6' style='background-color: ;'>
-        <div class='col-md-12' style='width: 9000px;'>
-            <div class='main-description my-9'>
-              <br><br><br>
-                <div class='name d'>
-                  <br>
-                  $cname
+    while ($row = mysqli_fetch_assoc($result_query)) {
+        $cid = $row['cid'];
+        $cname = $row['cname'];
+        $cdesc = $row['cdesc'];
+        $idesc = $row['idesc'];
+        $duration = $row['duration'];
+        $time = $row['time'];
+
+        echo "<div class='container fs-6' style='background-color: ;'>
+            <div class='col-md-12' style='width: 9000px;'>
+                <div class='main-description my-9'>
+                    <br><br><br>
+                    <div class='name d'>
+                        <br>
+                        $cname
+                    </div>
+                    <div class='product-title my-3'>
+                        DESCRIPTION<br>
+                        $cdesc
+                    </div>
                 </div>
-                <div class='product-title my-3'>
-                    DESCRIPTION<br>
-                    $cdesc
+                <div class='product-details my-9'>
+                    <div class='description  my-9'>DESCRIPTION OF INTERNSHIP<br> $idesc</div>
                 </div>
-            </div>
-            <div class='product-details my-9'>
-                <div class='description  my-9'>DESCRIPTION OF INTERNSHIP<br> $idesc</div>
-            </div>
-            <br>
-            <div class='delivery my-9'>
-                <div class=' mb-0'>DURATON<br>$duration</div>
                 <br>
-                <div>TIME <br>$time</div>
+                <div class='delivery my-9'>
+                    <div class=' mb-0'>DURATION<br>$duration</div>
+                    <br>
+                    <div>TIME <br>$time</div>
+                </div>
             </div>
-           ";
-        }
-            ?>
+        ";
+    }
+?>
+
             
       
 
             <!-- The form -->
-            <?php
-
-include('./internlink.php');
-
-
-
-
-if(isset($_POST['submit']))
-{
-    $id = $_POST['id'];
-    $name = $_POST['name'];
-    $regno = $_POST['regno'];
-    $email = $_POST['email'];
-    $stream = $_POST['stream'];
-    $mentor = $_POST['mentor'];
-    $cname = $_POST['cname'];
-
-    $insert_query = mysqli_query($con,"INSERT INTO  `intreg` (id, name, regno, email, stream, mentor, cname)); 
-    VALUES ('$id' ,'$name', '$regno', '$email', '$stream', '$mentor', '$cname')");
-   
-
-    if($insert_query){
-        echo "<script>alert('Submitted succesfully')</script>";
-        header('location:./comp.php');
-    }
-    else{
-        $_SESSION['status'] = "DATA NOT ADDED SUCCESFULLY";
-        header('location:./comp.php');
-    }
-
-}
-?>
 
          <div class="Apply"> 
           <button  onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Apply now</button>
         </div>  
-<div id="id01" class="modal">
+        <div id="id01" class="modal">
   
-  <form class="modal-content animate" action="" method=POST">
+  <form class="modal-content animate" action="reginfo.php" method="POST">
 
     <div class="container">
       <label for="name"><b>Name</b></label>
-      <input type="text" placeholder="Enter your name" name="name" required>
+      <input type="text" placeholder="Enter your name" id="name" name="name" required>
 
       <label for="regno"><b>Reg no</b></label>
-      <input type="text" placeholder="Enter your Reg no" name="regno" required>
+      <input type="text" placeholder="Enter your Reg no" id="regno" name="regno" required>
         <br>
 
         <label for="email"><b>Email</b></label>
-      <input type="text" placeholder="Enter your Reg no" name="regno" required>
+      <input type="text" placeholder="Enter your email" name="email" required>
         <br>  
       
         <label for="stream"><b>Stream</b></label>
       <input type="text" placeholder="Enter your stream" name="stream" required>
         <br>
-      <label for="username"><b>Select a Mentor</b></label>
-      <select name="username" >
-        <?php
-          $mentors=mysqli_query($con,"SELECT * FROM `mentor`");
-          while($m = mysqli_fetch_array($mentors)){
-        ?>
-        <option value="<?php echo $m['mid']?>"><?php echo $m['username']?></option>
-        <?php } ?>
-      </select>
       <br>
       
       <label for="cname"><b>Company name</b></label>
@@ -171,9 +131,11 @@ if(isset($_POST['submit']))
 
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-      <button type="submit" value="submit" onclick="document.getElementById('id01').style.display='none'" class="submitbtn">Submit</button>
+      <button type="submit" class="submitbtn">Submit</button>
+    </div>
   </form>
-</div>
+</div> 
+
 
              
 

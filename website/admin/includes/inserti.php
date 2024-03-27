@@ -34,18 +34,22 @@ include('./header.php');
     </div>
     <div class="card-body">
 
-    <form action="./codei.php" method="POST">
+  <form action="./codei.php" method="POST">
+    <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Cid</label>
+    <input type="text" class="form-control" name="cid" id="exampleInputEmail1" required>
+  </div>   
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Company name</label>
     <input type="text" class="form-control" name="cname" id="exampleInputEmail1" required>
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Company description</label>
-    <input type="email" class="form-control" name="cdesc" id="exampleInputPassword1" required>
+    <input type="textbox" class="form-control" name="cdesc" id="exampleInputPassword1" required>
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Internship description</label>
-    <input type="text" class="form-control" name="idesc" id="exampleInputPassword1" required>
+    <input type="textbox" class="form-control" name="idesc" id="exampleInputPassword1" required>
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Duration</label>

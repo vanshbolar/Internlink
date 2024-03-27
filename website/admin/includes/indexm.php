@@ -6,21 +6,15 @@ include('./header.php');
 <div class="container-fluid py-4">
     <div class="row">
         <div class="col-lg-7 position-relative z-index-2">
-            <div class="card card-plain mb-4">
-                <div class="card-body p-3">
+
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="d-flex flex-column h-100">
-                                <h2 class="font-weight-bolder mb-0">Student Info</h2>
+                                <h2 class="font-weight-bolder mb-0">Mentor Info</h2>
                             </div>
 
                         </div>
                     </div>
-                </div>
-            </div>
-
-
-
         </div>
     </div>
 
@@ -45,7 +39,7 @@ if(isset($_SESSION['status']) && $_SESSION['status'] !='')
     <div class="card-header">
         <h4>Insert Data
 
-            <a href="./insert.php" class="btn btn-primary float-end">insert</a>
+            <a href="./insertm.php" class="btn btn-primary float-end">insert</a>
         </h4>
     </div>
     <div class="card-body">

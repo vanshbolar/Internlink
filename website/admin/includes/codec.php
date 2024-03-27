@@ -28,7 +28,7 @@ if(isset($_POST['update_btn']))
     $iname=$_POST['iname'];
     $cimage=$_POST['cimage'];
 
-    $update_query = "UPDATE `icompany` SET iname='$iname', cimage= 'cimage' WHERE cid='$cid'";
+    $update_query = "UPDATE `icompany` SET iname='$iname', cimage= '$cimage' WHERE cid='$cid'";
     $update_query_run = mysqli_query($connection,$update_query);
 
     if($update_query_run){

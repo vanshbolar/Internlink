@@ -4,6 +4,7 @@
 
 if(isset($_POST['save_btn']))
 {
+    $cid=$_POST['cid'];
     $cname=$_POST['cname'];
     $cdesc=$_POST['cdesc'];
     $idesc=$_POST['idesc'];
@@ -11,7 +12,7 @@ if(isset($_POST['save_btn']))
     $time=$_POST['time'];
 
 
-    $insert_query = "INSERT INTO intinfo (cname,cdesc,idesc,duration,time) VALUES('$cname','$cdesc','$idesc'.'$duration','$time')";
+    $insert_query = "INSERT INTO `intinfo` (cid,cname,cdesc,idesc,duration,time) VALUES('$cid','$cname','$cdesc','$idesc','$duration','$time')";
     $insert_query_run = mysqli_query($connection,$insert_query);
 
     if($insert_query_run){

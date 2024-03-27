@@ -57,15 +57,15 @@ if ($fetch_query_run) {
                 <input type="textbox" class="form-control" value="<?php echo $row['cdesc'] ?>" name="cdesc" id="exampleInputPassword1" required>
             </div>
             <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <label for="exampleInputPassword1" class="form-label">Internship Description</label>
                 <input type="textbox" class="form-control" value="<?php echo $row['idesc'] ?>" name="idesc" id="exampleInputPassword1" required>
             </div>
             <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <label for="exampleInputPassword1" class="form-label">Duration</label>
                 <input type="text" class="form-control" value="<?php echo $row['duration'] ?>" name="duration" id="exampleInputPassword1" required>
             </div>
             <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <label for="exampleInputPassword1" class="form-label">Time</label>
                 <input type="text" class="form-control" value="<?php echo $row['time'] ?>" name="time" id="exampleInputPassword1" required>
             </div>
             <button type="submit" name="update_btn" class="btn btn-primary">Update</button>

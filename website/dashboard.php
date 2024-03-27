@@ -8,69 +8,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PDF File Upload</title>
+    <title>Form Submission</title>
     <style>
         body {
-            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
         }
 
         form {
-            display: inline-block;
-            text-align: left;
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        #uploadedFiles {
-            text-align: center;
-            list-style-type: none;
-            padding: 0;
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"], input[type="file"], textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
-    <h1>Upload PDF Files</h1>
-    <form action="#" method="post" enctype="multipart/form-data">
-        <label for="pdfFile">Select PDF File:</label>
-        <input type="file" name="pdfFile" id="pdfFile" accept=".pdf" required><br>
-        <button type="submit">Upload</button>
+    <form action="submitform.php" method="POST" enctype="multipart/form-data">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br>
+        
+        <label for="stream">Stream:</label><br>
+        <select id="stream" name="stream" required onchange="updateMentors()">
+            <option value="">Select Stream</option>
+            <option value="stream1">Stream 1</option>
+            <option value="stream2">Stream 2</option>
+        
+        </select><br>
+        
+        <label for="mentor">Mentor:</label><br>
+        <select id="mentor" name="mentor" required>
+            <option value="">Select Mentor</option>
+          
+        </select><br>
+        
+        <label for="pdf_file">Report (PDF file):</label><br>
+        <input type="file" id="pdf_file" name="pdf_file" accept="application/pdf" required><br>
+        
+        <button type="submit">Submit</button>
     </form>
-
-    <hr>
-
-    <h2>Uploaded PDF Files</h2>
-    <ul id="uploadedFiles">
-        <!-- This is where uploaded PDF file links will be displayed -->
-    </ul>
-
     <script>
-        document.querySelector('form').addEventListener('submit', async (event) => {
-            event.preventDefault();
-            
-            const formData = new FormData();
-            const fileInput = document.querySelector('input[type="file"]');
-            formData.append('pdfFile', fileInput.files[0]);
+        function updateMentors() {
+            var stream = document.getElementById("stream").value;
+            var mentorSelect = document.getElementById("mentor");
+            mentorSelect.innerHTML = ""; // Clear previous options
 
-            try {
-                const response = await fetch('upload.php', {
-                    method: 'POST',
-                    body: formData
-                });
-
-                if (response.ok) {
-                    const fileName = await response.text();
-                    const fileLink = document.createElement('a');
-                    fileLink.href = `uploads/${fileName}`;
-                    fileLink.textContent = fileName;
-                    fileLink.setAttribute('target', '_blank');
-                    const listItem = document.createElement('li');
-                    listItem.appendChild(fileLink);
-                    document.getElementById('uploadedFiles').appendChild(listItem);
-                } else {
-                    console.error('File upload failed:', response.statusText);
+            // Populate mentor options based on selected stream
+            if (stream === "stream1") {
+                // Populate mentor options for Stream 1
+                var mentors = ["Mentor 1", "Mentor 2", "Mentor 3"];
+                for (var i = 0; i < mentors.length; i++) {
+                    var option = document.createElement("option");
+                    option.text = mentors[i];
+                    option.value = mentors[i];
+                    mentorSelect.add(option);
                 }
-            } catch (error) {
-                console.error('File upload failed:', error);
+            } else if (stream === "stream2") {
+                // Populate mentor options for Stream 2
+                var mentors = ["Mentor A", "Mentor B", "Mentor C"];
+                for (var i = 0; i < mentors.length; i++) {
+                    var option = document.createElement("option");
+                    option.text = mentors[i];
+                    option.value = mentors[i];
+                    mentorSelect.add(option);
+                }
             }
-        });
+            // Add more conditions for other streams as needed
+        }
     </script>
 </body>
 </html>
