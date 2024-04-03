@@ -1,35 +1,30 @@
-
 <?php
+// Include your database connection file
+include('internlink.php');
 
-include('./internlink.php');
-?>
-<?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST['name'];
-    $stream = $_POST['stream'];
-    $mentor = $_POST['mentor'];
-
-    // Handle file upload
-    $file_name = $_FILES['pdf_file']['name'];
-    $file_tmp = $_FILES['pdf_file']['tmp_name'];
-    $file_content = file_get_contents($file_tmp);
+    // Process form data
+    $name = $_POST["name"];
+    $regno = $_POST["regno"];
+    $mentor_id = $_POST["mentor"];
     
-    // Prepare SQL statement
-    $stmt = $con->prepare("INSERT INTO  report (name, stream, mentor, file_name, file_content) VALUES (?, ?, ?, ?, ?)");
-    $stmt->bind_param("sssss", $name, $stream, $mentor, $file_name, $file_content);
-
-    // Execute SQL statement
-    if ($stmt->execute() === TRUE) {
-        echo "New record inserted successfully";
-        header("Location: index.php");
-        exit();
+    // File upload handling
+    $fileName = $_FILES['pdf_file']['name'];
+    $fileTmpName = $_FILES['pdf_file']['tmp_name'];
+    $pdfContent = file_get_contents($fileTmpName);
+   
+    // Prepare and execute the SQL statement
+    $query = "INSERT INTO report (name, regno, mentor_id, file_name, file_content) VALUES (?, ?, ?, ?, ?)";
+    $stmt = $con->prepare($query);
+    // Bind parameters
+    $stmt->bind_param("siiss", $name, $regno, $mentor_id, $fileName, $pdfContent);
+    
+    if ($stmt->execute()) {
+        echo "Report submitted successfully.";
     } else {
-        echo "Error: " . $sql . "<br>" . $con->error;
+        echo "Error submitting report: " . $stmt->error;
     }
-
-    // Close statement and connection
-    $stmt->close();
-    $con->close();
+} else {
+    echo "Error: Form submission method not POST.";
 }
 ?>
-

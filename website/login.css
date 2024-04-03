@@ -1,48 +1,94 @@
-body {
-    font-family:Arial, Sans-Serif;
-    background-image: url('./assets/bg.jpeg');
+
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        font-family: poppins;
+        font-size: 16px;
+        color: #1b1414;
+        
+    }
+    .form-box {
+        
+        background-color: rgba(0, 0, 0, 0.5);
+        margin: auto auto;
+        padding: 60px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px #000;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 450px;
+        height: 470px;
+    }
+    .form-box:before {
+        background-image: url('./assets//Quotefancy-8594-3840x2160\ \(1\).jpg');
+        background-position: 50% 50%;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        content: "";
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+        display: block;
+
+    }
+    .form-box .header-text {
+        font-size: 32px;
+        font-weight: 600;
+        padding-bottom: 30px;
+        text-align: center;
+    }
+    .form-box input {
+        margin: 10px 0px;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        width: 100%;
+        font-size: 18px;
+        font-family: poppins;
+    }
+
+    .form-box label {
+        position: relative;
+        margin-left: 5px;
+        margin-right: 10px;
+        top: 5px;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+    }
+    .form-box label:before {
+        content: "";
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border-radius: 5px;
+        position: absolute;
+        left: 0;
+        bottom: 1px;
+        background-color: #ddd;
+    }
+
+    .button {
+        background-color: deepskyblue;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+        font-size: 18px;
+        padding: 10px;
+        margin: 20px 0px;
+    }
+     a {
+        color: #BBB;
+    }
     
-}
-.clearfix:before, .clearfix:after{
-    content: "";
-    display: table;
-}
-.clearfix:after{
-    clear: both;
-}
-a{
-    color:#0067ab;
-    text-decoration:none;
-}
-a:hover{
-    text-decoration:underline;
-}
-.form{
-    width: 300px;
-    margin: 0 auto;
-}
-input[type='text'], input[type='email'],
-input[type='password'] {
-    width: 200px;
-    border-radius: 2px;
-    border: 1px solid #CCC;
-    padding: 10px;
-    color: #333;
-    font-size: 14px;
-    margin-top: 10px;
-}
-input[type='submit']{
-    padding: 10px 25px 8px;
-    color: #fff;
-    background-color:   #e7d03a;
-    text-shadow: rgba(231,208,58,0.24) 0 1px 0;
-    font-size: 16px;
-    box-shadow: rgba(231,208,58,0.24) 0 2px 0 0 inset,#fff 0 1px 0 0;
-    border: 1px solid  #e7d03a; 
-    border-radius: 2px;
-    margin-top: 10px;
-    cursor:pointer;
-}
-input[type='submit']:hover {
-    background-color: f0df74;
-}

@@ -48,7 +48,7 @@ if(isset($_SESSION['status']) && $_SESSION['status'] !='')
     <tr>
       <th scope="col">id</th>
       <th scope="col">Name</th>
-      <th scope="col">Email</th>
+      <th scope="col">Stream</th>
       <th scope="col">Password</th>
       <th scope="col"></th>
       <th scope="col"></th>
@@ -58,7 +58,7 @@ if(isset($_SESSION['status']) && $_SESSION['status'] !='')
   <tbody>
     <?php
 
-    $fetch_query= "SELECT * FROM mentor";
+    $fetch_query= "SELECT * FROM mentors";
     $fetch_query_run = mysqli_query($connection,$fetch_query);
 
     if(mysqli_num_rows($fetch_query_run)>0)
@@ -67,16 +67,17 @@ if(isset($_SESSION['status']) && $_SESSION['status'] !='')
         {
             ?>
             <tr>
-                <td><?php echo $row['mid']; ?></td>
+                <td><?php echo $row['id']; ?></td>
                 <td><?php echo $row['username']; ?></td>
-                <td><?php echo $row['password']; ?></td>
                 <td><?php echo $row['stream']; ?></td>
+                <td><?php echo $row['password']; ?></td>
+                
                 <td>
-                    <a href="editm.php?mid=<?php echo $row['mid']; ?>"  class="btn btn-primary btn-sm">Edit </a>
+                    <a href="editm.php?id=<?php echo $row['id']; ?>"  class="btn btn-primary btn-sm">Edit </a>
                 </td>
                 <td>
                     <form method="post" action="codem.php">
-                        <input type="hidden" name="mid" class="form-control" value="<?php echo $row['mid']; ?>">
+                        <input type="hidden" name="id" class="form-control" value="<?php echo $row['id']; ?>">
                         <button name="delete_btn" type="submit" class="btn btn-danger btn-sm">Delete </button>    
                     </form>
 

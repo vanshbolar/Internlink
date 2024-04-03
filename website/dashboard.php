@@ -15,6 +15,8 @@
             background-color: #f2f2f2;
             margin: 0;
             padding: 0;
+            background-image: url(./assets//shutterstock_387365044-1068x712.jpg);
+            opacity: 0.9;
         }
 
         form {
@@ -54,57 +56,67 @@
     </style>
 </head>
 <body>
-    <form action="submitform.php" method="POST" enctype="multipart/form-data">
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name" required><br>
-        
-        <label for="stream">Stream:</label><br>
-        <select id="stream" name="stream" required onchange="updateMentors()">
-            <option value="">Select Stream</option>
-            <option value="stream1">Stream 1</option>
-            <option value="stream2">Stream 2</option>
-        
-        </select><br>
-        
-        <label for="mentor">Mentor:</label><br>
-        <select id="mentor" name="mentor" required>
-            <option value="">Select Mentor</option>
-          
-        </select><br>
-        
-        <label for="pdf_file">Report (PDF file):</label><br>
-        <input type="file" id="pdf_file" name="pdf_file" accept="application/pdf" required><br>
-        
-        <button type="submit">Submit</button>
-    </form>
-    <script>
-        function updateMentors() {
-            var stream = document.getElementById("stream").value;
-            var mentorSelect = document.getElementById("mentor");
-            mentorSelect.innerHTML = ""; // Clear previous options
+<br><br>
+<form action="submitform.php" method="POST" enctype="multipart/form-data">
+    <label for="name">Name</label><br>
+    <input type="text" id="name" name="name" required><br>
+    
+    <label for="name">Regno</label><br>
+    <input type="text" id="regno" name="regno" required><br>
 
-            // Populate mentor options based on selected stream
-            if (stream === "stream1") {
-                // Populate mentor options for Stream 1
-                var mentors = ["Mentor 1", "Mentor 2", "Mentor 3"];
-                for (var i = 0; i < mentors.length; i++) {
-                    var option = document.createElement("option");
-                    option.text = mentors[i];
-                    option.value = mentors[i];
-                    mentorSelect.add(option);
-                }
-            } else if (stream === "stream2") {
-                // Populate mentor options for Stream 2
-                var mentors = ["Mentor A", "Mentor B", "Mentor C"];
-                for (var i = 0; i < mentors.length; i++) {
-                    var option = document.createElement("option");
-                    option.text = mentors[i];
-                    option.value = mentors[i];
-                    mentorSelect.add(option);
-                }
+    <label for="stream">Stream</label>
+    <select id="stream" name="stream" required>
+        <option value="" selected="selected" disabled="disabled">Select Stream</option>
+        <option value="BCA">BCA</option>
+        <option value="BBA">BBA</option>
+        <option value="BA">BA</option>
+        <option value="BVOC">BVOC</option>
+        <option value="BCOM">BCOM</option>
+        <!-- Add more stream options as needed -->
+    </select><br>
+    
+    <label for="mentor">Mentor</label>
+    <select id="mentor" name="mentor" required>
+        <!-- Mentor options will be dynamically populated based on selected stream -->
+    </select><br>
+    
+    <label for="pdf_file">Upload PDF File:</label><br>
+    <input type="file" name="pdf_file"
+                 class="form-control" accept=".pdf"
+                 title="Upload PDF"/><br>
+    
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+document.getElementById('stream').addEventListener('change', function() {
+    var stream = this.value;
+    var mentorSelect = document.getElementById('mentor');
+    mentorSelect.innerHTML = ''; // Clear existing options
+
+    // Fetch mentors based on the selected stream using AJAX
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'fetch_mentors.php?stream=' + stream, true);
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            var mentors = JSON.parse(xhr.responseText);
+            if (mentors.length > 0) {
+                mentors.forEach(function(mentor) {
+                    var option = document.createElement('option');
+                    option.value = mentor.id;
+                    option.textContent = mentor.username;
+                    mentorSelect.appendChild(option);
+                });
+            } else {
+                var option = document.createElement('option');
+                option.value = '';
+                option.textContent = 'No mentors available';
+                mentorSelect.appendChild(option);
             }
-            // Add more conditions for other streams as needed
         }
-    </script>
+    };
+    xhr.send();
+});
+</script>
 </body>
 </html>

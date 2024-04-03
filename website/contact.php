@@ -3,21 +3,12 @@
     include ('./header.php');
 ?>
 
-</main>
-<html>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Internship Management System</title>
     <style>
     .containers {
     background-color: white;
     padding: 30px;
     border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1); 
     margin: -55px auto; 
     width: 70% ;
 }
@@ -30,8 +21,9 @@ p{
 }
 </style>
 </head>
+
 <body>
-    
+<br><br><br><br><br><br>
 
         <div class="containers">
             <section class="contact-section">

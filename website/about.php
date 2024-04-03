@@ -2,8 +2,7 @@
     // include header.php file
     include ('./header.php');
 ?>
-</main>
-<html>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +15,7 @@
     background-color: white;
     padding: 30px;
     border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1); 
     margin: -55px auto; 
     width: 70% ;
 }
@@ -29,8 +28,9 @@ p{
 }
 </style>
 </head>
+
 <body>
-    
+    <br><br><br><br><br><br>
         <div class="containers">
             <section class="about-section">
                 <h2>What is the Internship Management System?</h2>
@@ -53,7 +53,7 @@ p{
                 <p>Our system offers a user-friendly interface, robust features, and customizable options to meet the specific needs of educational institutions, companies, and students. By automating and centralizing the internship management process, it saves time, reduces paperwork, and enhances efficiency.</p>
             </section>
         </div>
-    </main>
+
 
 </body>
 </html>

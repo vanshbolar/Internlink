@@ -4,13 +4,13 @@
 
 if(isset($_POST['save_btn']))
 {
-    $mid=$_POST['mid'];
+    $id=$_POST['id'];
     $username=$_POST['username'];
-    $password=$_POST['password'];
     $stream=$_POST['stream'];
+    $password=$_POST['password'];
     
 
-    $insert_query = "INSERT INTO mentor (mid,username,password,stream) VALUES('$mid','$username','$password','$stream')";
+    $insert_query = "INSERT INTO mentors (id,username,password,stream) VALUES('$id','$username','$stream','$password')";
     $insert_query_run = mysqli_query($connection,$insert_query);
 
     if($insert_query_run){
@@ -27,12 +27,12 @@ if(isset($_POST['save_btn']))
 
 if(isset($_POST['update_btn']))
 {
-    $mid=$_POST['mid'];
+    $id=$_POST['id'];
     $username=$_POST['username'];
-    $password=$_POST['password'];
     $stream=$_POST['stream'];
+    $password=$_POST['password'];
 
-    $update_query = "UPDATE mentor SET username='$username', password='$password', stream= '$stream' WHERE mid='$mid'";
+    $update_query = "UPDATE mentors SET username='$username', stream= '$stream', password='$password' WHERE id='$id'";
     $update_query_run = mysqli_query($connection,$update_query);
 
     if($update_query_run){
@@ -49,12 +49,12 @@ if(isset($_POST['update_btn']))
 
 if(isset($_POST['delete_btn']))
 {
-    $mid=$_POST['mid'];
+    $id=$_POST['id'];
     $username=$_POST['username'];
-    $password=$_POST['password'];
     $stream=$_POST['stream'];
+    $password=$_POST['password'];
 
-    $delete_query = "DELETE FROM mentor WHERE mid='$mid'";
+    $delete_query = "DELETE FROM mentors WHERE id='$id'";
     $delete_query_run = mysqli_query($connection,$delete_query);
 
     if($delete_query_run){

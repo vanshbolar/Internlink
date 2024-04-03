@@ -35,8 +35,8 @@ include('./header.php');
 
     <?php
 
-    $mid = $_GET['mid'];
-    $fetch_query = "SELECT * FROM mentor WHERE mid='$mid'";
+    $id = $_GET['id'];
+    $fetch_query = "SELECT * FROM mentors WHERE id='$id'";
     $fetch_query_run = mysqli_query($connection, $fetch_query);
 
 if ($fetch_query_run) {
@@ -46,21 +46,22 @@ if ($fetch_query_run) {
 
         <form action="./codem.php" method="POST">
         <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Mid</label>
-                <input type="text" class="form-control" value="<?php echo $row['mid'] ?>" name="mid" id="exampleInputEmail1" required>
+                <label for="exampleInputEmail1" class="form-label">id</label>
+                <input type="text" class="form-control" value="<?php echo $row['id'] ?>" name="id" id="exampleInputEmail1" required>
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Name</label>
                 <input type="text" class="form-control" value="<?php echo $row['username'] ?>" name="username" id="exampleInputEmail1" required>
             </div>
             <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="text" class="form-control" value="<?php echo $row['password'] ?>" name="password" id="exampleInputPassword1" required>
-            </div>
-            <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Stream</label>
                 <input type="text" class="form-control" value="<?php echo $row['stream'] ?>" name="stream" id="exampleInputPassword1" required>
             </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="text" class="form-control" value="<?php echo $row['password'] ?>" name="password" id="exampleInputPassword1" required>
+            </div>
+            
             <button type="submit" name="update_btn" class="btn btn-primary">Update</button>
         </form>
 

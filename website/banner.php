@@ -3,17 +3,9 @@
 include('./internlink.php');
 ?>
 
-
-    </main>
-
-
-      <!-- !start categories -->
-
-  
-   
-
         <?php
-        $select_query="SELECT * FROM `icompany`";
+        
+        $select_query="SELECT * FROM `icompany` ";
         $result_query=mysqli_query($con,$select_query);
 
         while($row=mysqli_fetch_assoc($result_query))
@@ -21,7 +13,7 @@ include('./internlink.php');
           $cid=$row['cid'];
           $iname=$row['iname'];
           $cimage=$row['cimage'];
-          echo "   <div class='responsive first'>
+          echo "   <div class='responsive '>
           <div class='container-envelope'>
             <svg class='cirle-a' height='160' width='160'>
               <circle cx='80' cy='80' r='80' />
@@ -38,7 +30,7 @@ include('./internlink.php');
             <img src='./assets/$cimage' >
             <div class='col-xs-12'>
               <p>$iname</p>
-              <a target='_blank' href='comp.php' class='more-link'>KNOW MORE</a>
+              <a target='_blank' href='comp.php?cid=$cid' class='more-link'>KNOW MORE</a>
             </div>
           </div>
           </div>";

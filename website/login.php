@@ -1,11 +1,17 @@
-
 <!DOCTYPE html>
 <html>
 <meta charset="utf-8">
 <title>Login</title>
 <link rel="stylesheet" href="./login.css" />
+<head>
+<style>
+
+</style>
+
+
 </head>
-<body style="background-image: url('./assets//bg.jpeg');">
+
+<body>
 <?php
 require('internlink.php');
 session_start();
@@ -36,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Check mentors table
-    $sql = "SELECT * FROM mentor WHERE username='$username' AND password='$password'";
+    $sql = "SELECT * FROM mentors WHERE username='$username' AND password='$password'";
     $result = $con->query($sql);
 
     if ($result->num_rows == 1) {
@@ -51,17 +57,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 <br>
 	<nav class="container" style="top: 10px; width:100%;">
-		<div class="nav-head" style="width:auto ;"><marquee direction="right">WELCOME TO INTERLINK</marquee></div>
+		<div class="nav-head" style="width:auto ;"><marquee direction="right">WELCOME TO INTERNLINK</marquee></div>
 	  </nav>
-<div class="form">
-<h1>Log In</h1>
+
+<div class="form-box">
+    <div class="header-text">Login Form
+    </div>
 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" name="login">
 <input type="text" name="username" placeholder="Username" required />
 <input type="password" name="password" placeholder="Password" required />
-<br>
-<input name="submit" type="submit" value="Login" />
+<br><br>
+<input class="button" name="submit" type="submit" value="Login" />
 </form>
-<p>Not registered yet? <a href='registration.php'>Register Here</a></p>
+<p style="color: white;">Not registered yet? <a href='registration.php'>Register Here</a></p>
 </div>
 <?php if(isset($error)) { echo $error; } ?>
 </body>

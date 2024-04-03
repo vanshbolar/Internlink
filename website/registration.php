@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <meta charset="utf-8">
-<link rel="stylesheet" href="./login.css" />
+<link rel="stylesheet" href="./registration.css" />
 </head>
-<body style="background-image: url(./assets//bg.jpeg);">
+<body>
 <?php
 require('internlink.php');
 // If form submitted, insert values into the database.
@@ -26,13 +26,15 @@ VALUES ('$username','$email', '$password' )";
         }
     }else{
 ?>
-<div class="form">
-<h1>Registration</h1>
+<div class="form-box">
+    <div class="header-text">Registration Form
+    </div>
 <form name="registration" action="" method="post">
 <input type="text" name="username" placeholder="Username" required />
 <input type="email" name="email" placeholder="Email" required />
 <input type="password" name="password" placeholder="Password" required />
-<input type="submit" name="submit" value="Register" />
+<br><br>
+<input class="button" type="submit" name="submit" value="Register" />
 </form>
 </div>
 <?php } ?>

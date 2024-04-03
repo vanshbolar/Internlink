@@ -49,7 +49,7 @@ if (isset($_SESSION['status']) && $_SESSION['status'] != '') {
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col">id</th>
+
                     <th scope="col">Name</th>
                     <th scope="col">Regno</th>
                     <th scope="col">Report</th>
@@ -60,33 +60,40 @@ if (isset($_SESSION['status']) && $_SESSION['status'] != '') {
             <tbody>
                 <?php
 
-                # $fetch_query= "SELECT * FROM user";
-                # $fetch_query_run = mysqli_query($connection,$fetch_query);
+                $fetch_query= "SELECT * FROM report";
+                $fetch_query_run = mysqli_query($con,$fetch_query);
 
-                #if(mysqli_num_rows($fetch_query_run)>0)
-                #{
-                # foreach($fetch_query_run as $row)
-                #  {
+                if(mysqli_num_rows($fetch_query_run)>0)
+                {
+                 foreach($fetch_query_run as $row)
+                 {
                 ?>
                 <tr>
-                    <td><?php  #echo $row['id']; 
+                    <td><?php echo $row['name']; 
                         ?></td>
-                    <td><?php # echo $row['username']; 
+                    <td><?php  echo $row['regno']; 
                         ?></td>
-                    <td><?php # echo $row['email']; 
-                        ?></td>
-                    <td><?php # echo $row['password']; 
-                        ?></td>
+                    <td><?php
+                    // Check if file content exists
+                    if (!empty($row['file_content'])) {
+                        // Output a link to view/download the PDF file
+                        ?>
+                        <a href="view_pdf.php?id=<?php echo $row['id']; ?>" target="_blank">View PDF</a>
+                        <?php
+                    } else {
+                        echo "No PDF available";
+                    }
+                    ?></td>
                     </form>
 
                     </td>
                 </tr>
                 <?php
-                # }
-                # }
-                #  else{
+                }
+                }
+              else{
 
-                #  }
+                 }
 
                 ?>
 

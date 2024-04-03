@@ -36,20 +36,20 @@ include('./header.php');
 
     <form action="./codem.php" method="POST">
     <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Mid</label>
-    <input type="text" class="form-control" name="mid" id="exampleInputEmail1" required>
+    <label for="exampleInputEmail1" class="form-label">id</label>
+    <input type="text" class="form-control" name="id" id="exampleInputEmail1" required>
   </div>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Name</label>
     <input type="text" class="form-control" name="username" id="exampleInputEmail1" required>
   </div>
   <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="text" class="form-control" name="password" id="exampleInputPassword1" required>
-  </div>
-  <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Stream</label>
     <input type="text" class="form-control" name="stream" id="exampleInputPassword1" required>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="text" class="form-control" name="password" id="exampleInputPassword1" required>
   </div>
 
   <button type="submit" name="save_btn" class="btn btn-primary">Submit</button>
