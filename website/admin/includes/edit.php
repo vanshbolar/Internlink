@@ -18,12 +18,8 @@ include('./header.php');
                     </div>
                 </div>
             </div>
-
-
-
         </div>
     </div>
-
 </div>
 
 <div class="card">
@@ -36,7 +32,7 @@ include('./header.php');
     <?php
 
     $id = $_GET['id'];
-    $fetch_query = "SELECT * FROM user WHERE id='$id'";
+    $fetch_query = "SELECT * FROM users WHERE id='$id'";
     $fetch_query_run = mysqli_query($connection, $fetch_query);
 
 if ($fetch_query_run) {

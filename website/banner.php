@@ -5,7 +5,7 @@ include('./internlink.php');
 
         <?php
         
-        $select_query="SELECT * FROM `icompany` ";
+        $select_query="SELECT * FROM `company` ";
         $result_query=mysqli_query($con,$select_query);
 
         while($row=mysqli_fetch_assoc($result_query))

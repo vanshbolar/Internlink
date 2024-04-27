@@ -72,12 +72,11 @@
         <option value="BA">BA</option>
         <option value="BVOC">BVOC</option>
         <option value="BCOM">BCOM</option>
-        <!-- Add more stream options as needed -->
     </select><br>
     
     <label for="mentor">Mentor</label>
     <select id="mentor" name="mentor" required>
-        <!-- Mentor options will be dynamically populated based on selected stream -->
+        <!-- Mentor options -->
     </select><br>
     
     <label for="pdf_file">Upload PDF File:</label><br>
@@ -92,9 +91,7 @@
 document.getElementById('stream').addEventListener('change', function() {
     var stream = this.value;
     var mentorSelect = document.getElementById('mentor');
-    mentorSelect.innerHTML = ''; // Clear existing options
-
-    // Fetch mentors based on the selected stream using AJAX
+    mentorSelect.innerHTML = ''; 
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'fetch_mentors.php?stream=' + stream, true);
     xhr.onload = function() {

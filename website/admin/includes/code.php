@@ -8,15 +8,17 @@ if(isset($_POST['save_btn']))
     $email=$_POST['email'];
     $password=$_POST['password'];
 
-    $insert_query = "INSERT INTO user (username,email,password) VALUES('$username','$email','$password')";
+    $insert_query = "INSERT INTO users (username,email,password) VALUES('$username','$email','$password')";
     $insert_query_run = mysqli_query($connection,$insert_query);
 
     if($insert_query_run){
         $_SESSION['status'] = "DATA ADDED SUCCESFULLY";
+        $_SESSION['status_code']="success";
         header('location:./index.php');
     }
     else{
         $_SESSION['status'] = "DATA NOT ADDED SUCCESFULLY";
+        $_SESSION['status_code']="error";
         header('location:./insert.php');
     }
 
@@ -30,7 +32,7 @@ if(isset($_POST['update_btn']))
     $email=$_POST['email'];
     $password=$_POST['password'];
 
-    $update_query = "UPDATE user SET username='$username', email= '$email', password='$password' WHERE id='$id'";
+    $update_query = "UPDATE users SET username='$username', email= '$email', password='$password' WHERE id='$id'";
     $update_query_run = mysqli_query($connection,$update_query);
 
     if($update_query_run){
@@ -52,7 +54,7 @@ if(isset($_POST['delete_btn']))
     $email=$_POST['email'];
     $password=$_POST['password'];
 
-    $delete_query = "DELETE FROM user WHERE id='$id'";
+    $delete_query = "DELETE FROM users WHERE id='$id'";
     $delete_query_run = mysqli_query($connection,$delete_query);
 
     if($delete_query_run){

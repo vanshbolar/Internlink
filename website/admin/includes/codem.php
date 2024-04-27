@@ -10,7 +10,7 @@ if(isset($_POST['save_btn']))
     $password=$_POST['password'];
     
 
-    $insert_query = "INSERT INTO mentors (id,username,password,stream) VALUES('$id','$username','$stream','$password')";
+    $insert_query = "INSERT INTO mentorr (id,username,password,stream) VALUES('$id','$username','$stream','$password')";
     $insert_query_run = mysqli_query($connection,$insert_query);
 
     if($insert_query_run){
@@ -32,7 +32,7 @@ if(isset($_POST['update_btn']))
     $stream=$_POST['stream'];
     $password=$_POST['password'];
 
-    $update_query = "UPDATE mentors SET username='$username', stream= '$stream', password='$password' WHERE id='$id'";
+    $update_query = "UPDATE mentorr SET username='$username', stream= '$stream', password='$password' WHERE id='$id'";
     $update_query_run = mysqli_query($connection,$update_query);
 
     if($update_query_run){
@@ -54,7 +54,7 @@ if(isset($_POST['delete_btn']))
     $stream=$_POST['stream'];
     $password=$_POST['password'];
 
-    $delete_query = "DELETE FROM mentors WHERE id='$id'";
+    $delete_query = "DELETE FROM mentorr WHERE id='$id'";
     $delete_query_run = mysqli_query($connection,$delete_query);
 
     if($delete_query_run){

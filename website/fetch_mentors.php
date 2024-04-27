@@ -1,10 +1,9 @@
 <?php
-// Include your database connection file
 include('internlink.php');
 
 if (isset($_GET['stream'])) {
     $stream = $_GET['stream'];
-    $query = "SELECT * FROM mentors WHERE stream = ?";
+    $query = "SELECT * FROM mentorr WHERE stream = ?";
     $stmt = $con->prepare($query);
     $stmt->bind_param("s", $stream);
     $stmt->execute();

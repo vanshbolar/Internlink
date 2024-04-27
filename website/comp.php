@@ -104,6 +104,9 @@ include('./internlink.php');
     width: 30px;
     height: 30px;
     margin-right: 0.5em;
+    background-image: url(./assets//logo1.jpg);
+    background-size: cover;
+    background-position: center;
   }
   #navbar-toggle {
     cursor: pointer;
@@ -201,12 +204,12 @@ include('./internlink.php');
   </head>
 
 
-  <body style="background-color:turquoise;" >
+  <body style="background-color:grey;" >
   
   <!-- start #header -->
   <header id="navbar">
       <nav class="navbar-container container">
-        <a href="/" class="home-link">
+        <a href="./index.php" class="home-link">
           <div class="navbar-logo"></div>
           INTERNLINK
         </a>
@@ -217,7 +220,7 @@ include('./internlink.php');
           <ul class="navbar-links">
             <li class="navbar-item"><a class="navbar-link active-page " href="./index.php">Home</a></li>
             <li class="navbar-item"><a class="navbar-link active-page " href="./about.php">About</a></li>
-            <li class="navbar-item"><a class="navbar-link active-page " href="./dashboard.php">Dashboard</a></li>
+            <li class="navbar-item"><a class="navbar-link active-page " href="./dashboard.php">Report</a></li>
             <li class="navbar-item"><a class="navbar-link active-page " href="./contact.php">Contact</a></li>
           </ul>
         </div>
@@ -234,7 +237,6 @@ include('./internlink.php');
     <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
-
         <link rel="stylesheet" href="./html templates//form.css">
         <style>
     .containers {
@@ -254,7 +256,7 @@ p{
     text-transform: none;
 }
 body{
-  background-image:url(./assets//1675591923154.jpg);
+  background-image:url();
   background-size: contain;
   color:black;
 }
@@ -267,7 +269,7 @@ body{
     if(isset($_GET['cid'])) {
       // Retrieve the 'cid' parameter from the URL
       $cid = $_GET['cid'];
-    $select_query = "SELECT *FROM intinfo WHERE cid=$cid ";
+    $select_query = "SELECT *FROM intinfos WHERE cid=$cid ";
     $result_query = mysqli_query($con, $select_query);
   
 

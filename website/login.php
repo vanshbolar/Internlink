@@ -5,17 +5,16 @@
 <link rel="stylesheet" href="./login.css" />
 <head>
 <style>
-
 </style>
 
 
 </head>
 
-<body>
+<body style="background-color:rgb(33, 33, 33);">
 <?php
 require('internlink.php');
 session_start();
-// If form submitted, insert values into the database.
+// If form submitted insert values into the database
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -24,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = mysqli_real_escape_string($con, $password);
 
     // Check students and admins table
-    $sql = "SELECT * FROM user WHERE username='$username' AND password='$password'";
+    $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
     $result = $con->query($sql);
 
     if ($result->num_rows == 1) {
@@ -41,36 +40,51 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-    // Check mentors table
-    $sql = "SELECT * FROM mentors WHERE username='$username' AND password='$password'";
-    $result = $con->query($sql);
 
-    if ($result->num_rows == 1) {
-        $_SESSION['username'] = $username;
-        header("Location: ./mentor/index.php");
-        exit();
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+    
+        // Check mentors table
+        $sql = "SELECT id FROM mentorr WHERE username='$username' AND password='$password'";
+        $result = $con->query($sql);
+    
+        if ($result->num_rows == 1) {
+            $row = $result->fetch_assoc();
+            $_SESSION['username'] = $username;
+            $_SESSION['mentor_id'] = $row['id']; // Store mentor ID in session
+            header("Location: ./mentor/index.php");
+            exit();
+        } else {
+            $error = "Invalid username or password";
+        }
     }
-
-    // If no match found, display error
-    $error = "Invalid username or password";
 }
 ?>
-<br>
-	<nav class="container" style="top: 10px; width:100%;">
-		<div class="nav-head" style="width:auto ;"><marquee direction="right">WELCOME TO INTERNLINK</marquee></div>
-	  </nav>
-
-<div class="form-box">
-    <div class="header-text">Login Form
-    </div>
-<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" name="login">
-<input type="text" name="username" placeholder="Username" required />
-<input type="password" name="password" placeholder="Password" required />
 <br><br>
+	<nav class="container" style="top: 10px; width:100%;">
+		<div class="nav-head" style="width:auto ;"><marquee direction="right" style="color: thistle;">WELCOME TO INTERNLINK</marquee></div>
+	  </nav>
+<br><br><br>
+      <div class="login-container">
+<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"  class="login-form"  method="post" name="login">
+<p class="heading">Login</p>
+<p></p>
+<div class="input-group">
+<input type="text" name="username" placeholder="Username" required />
+</div>
+<div class="input-group">
+<input type="password" name="password" placeholder="Password" required />
+</div>
 <input class="button" name="submit" type="submit" value="Login" />
-</form>
+<div class="bottom-text">
 <p style="color: white;">Not registered yet? <a href='registration.php'>Register Here</a></p>
 </div>
+</form>
+</div>
+
+
+
 <?php if(isset($error)) { echo $error; } ?>
 </body>
 </html>

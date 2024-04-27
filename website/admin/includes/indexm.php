@@ -58,7 +58,7 @@ if(isset($_SESSION['status']) && $_SESSION['status'] !='')
   <tbody>
     <?php
 
-    $fetch_query= "SELECT * FROM mentors";
+    $fetch_query= "SELECT * FROM mentorr";
     $fetch_query_run = mysqli_query($connection,$fetch_query);
 
     if(mysqli_num_rows($fetch_query_run)>0)

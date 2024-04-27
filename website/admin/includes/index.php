@@ -16,11 +16,6 @@ include('./header.php');
 
                         </div>
                     </div>
-
-
-
-
-
         </div>
     </div>
 
@@ -64,7 +59,7 @@ if(isset($_SESSION['status']) && $_SESSION['status'] !='')
   <tbody>
     <?php
 
-    $fetch_query= "SELECT * FROM user";
+    $fetch_query= "SELECT * FROM users";
     $fetch_query_run = mysqli_query($connection,$fetch_query);
 
     if(mysqli_num_rows($fetch_query_run)>0)

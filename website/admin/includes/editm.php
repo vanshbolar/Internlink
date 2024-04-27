@@ -36,7 +36,7 @@ include('./header.php');
     <?php
 
     $id = $_GET['id'];
-    $fetch_query = "SELECT * FROM mentors WHERE id='$id'";
+    $fetch_query = "SELECT * FROM mentorr WHERE id='$id'";
     $fetch_query_run = mysqli_query($connection, $fetch_query);
 
 if ($fetch_query_run) {

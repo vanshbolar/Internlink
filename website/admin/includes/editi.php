@@ -36,7 +36,7 @@ include('./header.php');
     <?php
 
     $cid = $_GET['cid'];
-    $fetch_query = "SELECT * FROM intinfo WHERE cid='$cid'";
+    $fetch_query = "SELECT * FROM intinfos WHERE cid='$cid'";
     $fetch_query_run = mysqli_query($connection, $fetch_query);
 
 if ($fetch_query_run) {

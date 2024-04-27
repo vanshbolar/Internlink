@@ -33,25 +33,24 @@ p{
     <br><br><br><br><br><br>
         <div class="containers">
             <section class="about-section">
-                <h2>What is the Internship Management System?</h2>
-                <p>The Internship Management System is a web-based application designed to streamline the process of managing internships within an organization. It provides a centralized platform for students, administrators, and companies to interact and manage various aspects of the internship process.</p>
+                <h2>Welcome to INTERNLINK</h2>
+                <p>At INTERNLINK, we understand the pivotal role internships play in shaping the careers of aspiring professionals. Our platform is designed to streamline the internship management process, connecting students, educational institutions, and businesses seamlessly.</p>
             </section>
 
             <section class="about-section">
-                <h2>Key Features</h2>
+                <h2>Our Mission</h2>
                 <p>
-                    Student Registration: Students can register for internships and upload their resumes.
-                    Internship Listings: Companies can post internship opportunities with details such as job description, requirements, and duration.
-                    Application Management: Administrators can manage internship applications, review resumes, and schedule interviews.
-                    Feedback System: Students can provide feedback on their internship experience, and companies can evaluate interns.
-                    Reporting: Generate reports on internship placements, student performance, and company feedback.
+                We are committed to bridging the gap between academia and industry by providing a comprehensive platform that facilitates meaningful internship experiences. Our mission is to empower students to find valuable internships that align with their career goals, while assisting organizations in discovering top talent and nurturing the next generation of professionals.
 </p>
             </section>
 
             <section class="about-section">
-                <h2>Why Choose Our Internship Management System?</h2>
-                <p>Our system offers a user-friendly interface, robust features, and customizable options to meet the specific needs of educational institutions, companies, and students. By automating and centralizing the internship management process, it saves time, reduces paperwork, and enhances efficiency.</p>
-            </section>
+                <h2>What We Offer</h2>
+                <p><b>Efficient Internship Matching:</b> Our advanced algorithm matches students with internship opportunities based on their skills, interests, and career objectives, ensuring a mutually beneficial experience for both parties.<br>
+
+                <b>User-Friendly Interface:</b> Our intuitive platform makes it easy for students, educational institutions, and businesses to navigate through the internship process, from application to evaluation.<br>
+
+                <b>Customized Solutions:</b> We understand that every organization and student has unique needs. That's why we offer customizable solutions to meet specific requirements, ensuring a tailored experience for all users.</p>
         </div>
 
 

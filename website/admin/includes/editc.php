@@ -18,12 +18,8 @@ include('./header.php');
                     </div>
                 </div>
             </div>
-
-
-
         </div>
     </div>
-
 </div>
 
 <div class="card">
@@ -36,7 +32,7 @@ include('./header.php');
     <?php
 
     $cid = $_GET['cid'];
-    $fetch_query = "SELECT * FROM `icompany` WHERE cid='$cid'";
+    $fetch_query = "SELECT * FROM `company` WHERE cid='$cid'";
     $fetch_query_run = mysqli_query($connection, $fetch_query);
 
 if ($fetch_query_run) {

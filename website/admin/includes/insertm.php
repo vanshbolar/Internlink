@@ -59,6 +59,6 @@ include('./header.php');
 </div>
 
 <?php
-// include header.php file
+
 include('./footer.php');
 ?>

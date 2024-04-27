@@ -1,9 +1,4 @@
 </section>
-    
-    
-      <!-- !start #main-site -->
-
-
 
       <!-- start #footer -->
       <footer class="footer">
@@ -46,7 +41,7 @@
 // Get the button
 let mybutton = document.getElementById("myBtn");
 
-// When the user scrolls down 20px from the top of the document, show the button
+// When the user scrolls down show the button
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
@@ -57,7 +52,6 @@ function scrollFunction() {
   }
 }
 
-// When the user clicks on the button, scroll to the top of the document
 function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
@@ -69,7 +63,6 @@ function topFunction() {
    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
    
  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"/>
-    <script src="./website/html templates/index.js"/>
-
+ <script src="index.js"></script>
     </body>
 </html>

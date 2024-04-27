@@ -2,28 +2,28 @@
 <?php
 
 
-if(isset($_POST['save_btn']))
-{
-    $cid=$_POST['cid'];
-    $cname=$_POST['cname'];
-    $cdesc=$_POST['cdesc'];
-    $idesc=$_POST['idesc'];
-    $duration=$_POST['duration'];
-    $time=$_POST['time'];
+if(isset($_POST['save_btn'])) {
+    $cid = mysqli_real_escape_string($connection, $_POST['cid']);
+    $cname = mysqli_real_escape_string($connection, $_POST['cname']);
+    $cdesc = mysqli_real_escape_string($connection, $_POST['cdesc']);
+    $idesc = mysqli_real_escape_string($connection, $_POST['idesc']);
+    $duration = mysqli_real_escape_string($connection, $_POST['duration']);
+    $time = mysqli_real_escape_string($connection, $_POST['time']);
 
 
-    $insert_query = "INSERT INTO `intinfo` (cid,cname,cdesc,idesc,duration,time) VALUES('$cid','$cname','$cdesc','$idesc','$duration','$time')";
-    $insert_query_run = mysqli_query($connection,$insert_query);
+    $insert_query = "INSERT INTO `intinfos` (cid, cname, cdesc, idesc, duration, time) VALUES ('$cid', '$cname', '$cdesc', '$idesc', '$duration', '$time')";
+    $insert_query_run = mysqli_query($connection, $insert_query);
 
     if($insert_query_run){
-        $_SESSION['status'] = "DATA ADDED SUCCESFULLY";
+        $_SESSION['status'] = "DATA ADDED SUCCESSFULLY";
         header('location:./indexi.php');
+        exit(); 
     }
     else{
-        $_SESSION['status'] = "DATA NOT ADDED SUCCESFULLY";
+        $_SESSION['status'] = "DATA NOT ADDED SUCCESSFULLY";
         header('location:./inserti.php');
+        exit(); 
     }
-
 }
 
 
@@ -36,7 +36,7 @@ if(isset($_POST['update_btn']))
     $duration=$_POST['duration'];
     $time=$_POST['time'];
 
-    $update_query = "UPDATE intinfo SET cname='$cname', cdesc= '$cdesc', idesc='$idesc', duration='$duration', time='$time' WHERE cid='$cid'";
+    $update_query = "UPDATE intinfos SET cname='$cname', cdesc= '$cdesc', idesc='$idesc', duration='$duration', time='$time' WHERE cid='$cid'";
     $update_query_run = mysqli_query($connection,$update_query);
 
     if($update_query_run){
@@ -60,7 +60,7 @@ if(isset($_POST['delete_btn']))
     $duration=$_POST['duration'];
     $time=$_POST['time'];
 
-    $delete_query = "DELETE FROM intinfo WHERE cid='$cid'";
+    $delete_query = "DELETE FROM intinfos WHERE cid='$cid'";
     $delete_query_run = mysqli_query($connection,$delete_query);
 
     if($delete_query_run){
