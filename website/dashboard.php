@@ -76,6 +76,7 @@
     
     <label for="mentor">Mentor</label>
     <select id="mentor" name="mentor" required>
+    <option value="" selected="selected" disabled="disabled">Select Mentor</option>
         <!-- Mentor options -->
     </select><br>
     

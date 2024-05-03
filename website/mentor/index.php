@@ -79,5 +79,10 @@ if (isset($_SESSION['status']) && $_SESSION['status'] != '') {
                 ?>
             </tbody>
         </table>
+        <div class="position-fixed top-0 end-0 m-3">
+    <div class="">
+        <a class="btn bg-gradient-danger" href="./logout.php" type="button">Logout</a>
+    </div>
+</div>
     </div>
 </div>

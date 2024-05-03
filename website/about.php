@@ -10,49 +10,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Internship Management System</title>
+ 
     <style>
-    .containers {
-    background-color: white;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 1); 
-    margin: -55px auto; 
-    width: 70% ;
-}
+        @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
 
-.about-section {
-    margin-bottom: 10px;
-}
-p{
-    text-transform: none;
-}
-</style>
+        img {
+            margin-top: 10%; 
+            border-radius: 0px;
+            width: 100%; 
+            height: 100% ;
+        }
+
+        .about-area {
+            padding-top: 2%; 
+        }
+
+        .about-text {
+            padding-top: 5%; 
+            padding-right: 5%;
+            width: auto;
+        }
+
+        .about-text h2 {
+            color: black;
+            font-family: 'Poppins', sans-serif;
+            font-size: 25px;
+        }
+
+        .about-text p {
+            font-family: 'Ubuntu', sans-serif;
+            font-size: 18px;
+            color: black;
+            text-transform: none;
+            margin-bottom: 0; 
+        }
+
+        .border {
+            width: 100px;
+            height: 10px;
+            background: #34495e;
+            margin: 20px auto; 
+        }
+
+        
+        .col-lg-4,
+        .col-lg-8 {
+            padding: 0 10px; 
+        }
+
+    </style>
 </head>
 
 <body>
-    <br><br><br><br><br><br>
-        <div class="containers">
-            <section class="about-section">
-                <h2>Welcome to INTERNLINK</h2>
-                <p>At INTERNLINK, we understand the pivotal role internships play in shaping the careers of aspiring professionals. Our platform is designed to streamline the internship management process, connecting students, educational institutions, and businesses seamlessly.</p>
-            </section>
 
-            <section class="about-section">
-                <h2>Our Mission</h2>
-                <p>
-                We are committed to bridging the gap between academia and industry by providing a comprehensive platform that facilitates meaningful internship experiences. Our mission is to empower students to find valuable internships that align with their career goals, while assisting organizations in discovering top talent and nurturing the next generation of professionals.
-</p>
-            </section>
-
-            <section class="about-section">
-                <h2>What We Offer</h2>
-                <p><b>Efficient Internship Matching:</b> Our advanced algorithm matches students with internship opportunities based on their skills, interests, and career objectives, ensuring a mutually beneficial experience for both parties.<br>
-
-                <b>User-Friendly Interface:</b> Our intuitive platform makes it easy for students, educational institutions, and businesses to navigate through the internship process, from application to evaluation.<br>
-
-                <b>Customized Solutions:</b> We understand that every organization and student has unique needs. That's why we offer customizable solutions to meet specific requirements, ensuring a tailored experience for all users.</p>
+    <div class="about-area">
+        <div class="container">
+            <h1>About Us</h1>
+            <div class="border"></div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="about-img">
+                        <img src="./assets//logo.jpg" >
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="about-text">
+                        <br><h2>&nbsp;&nbsp;Welcome to InternLink</h2>
+                        <p>&nbsp;&nbsp;At InternLink, we're dedicated to providing college students with comprehensive information about internships. 
+                        &nbsp;&nbsp;Our main goal is to revolutionize the internship process by digitalizing it for both students and mentors, 
+                        ensuring &nbsp;&nbsp;efficiency, reliability, and transparency every step of the way. 
+                        With InternLink, you can say goodbye to the risks of &nbsp;&nbsp;data loss and hello to streamlined internship management. 
+                        <br>&nbsp;&nbsp;Our anticipated system will store and manage internship information, making the entire process faster and 
+                        &nbsp;&nbsp;simpler for everyone involved. Join us on InternLink and take the next step towards your professional future!</p>
+                    </div>
+                </div>
+            </div>
         </div>
-
-
+    </div>
 </body>
 </html>

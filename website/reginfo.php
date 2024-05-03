@@ -17,23 +17,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Connection failed: " . $conn->connect_error);
     }
 
-
     $stmt = $conn->prepare("INSERT INTO `intregs` (name, regno, email, stream, cname) VALUES (?, ?, ?, ?, ?)");
     $stmt->bind_param("sssss", $name, $regno, $email, $stream, $cname);
 
+    $success = $stmt->execute();
 
-    $stmt->execute();
-
-    echo "Registration info submitted successfully";
-
+    if ($success) {
+        header("Location: success.php");
+    } else {
+        header("Location: error.php");
+    }
 
     $stmt->close();
     $conn->close();
 } else {
-
     header("Location: comp.php");
     exit;
 }
-header("Location: index.php");
-exit;
 ?>

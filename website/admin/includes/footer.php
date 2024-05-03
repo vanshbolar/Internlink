@@ -11,7 +11,7 @@
 </main>
 
 <script src="./assets/bootstrap.bundle.min.js"></script>
-
+<script src="index.js"></script>
 <?php
 if(isset($_SESSION['status'])&& $_SESSION['status'] != '')
 {

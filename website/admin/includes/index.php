@@ -11,7 +11,7 @@ include('./header.php');
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="d-flex flex-column h-100">
-                                <h2 class="font-weight-bolder mb-0">Student Info</h2>
+                                <h2 class="font-weight-bolder mb-0">Student Information</h2>
                             </div>
 
                         </div>
@@ -47,7 +47,7 @@ if(isset($_SESSION['status']) && $_SESSION['status'] !='')
     <table class="table">
   <thead>
     <tr>
-      <th scope="col">id</th>
+      
       <th scope="col">Name</th>
       <th scope="col">Email</th>
       <th scope="col">Password</th>
@@ -68,7 +68,7 @@ if(isset($_SESSION['status']) && $_SESSION['status'] !='')
         {
             ?>
             <tr>
-                <td><?php echo $row['id']; ?></td>
+                
                 <td><?php echo $row['username']; ?></td>
                 <td><?php echo $row['email']; ?></td>
                 <td><?php echo $row['password']; ?></td>

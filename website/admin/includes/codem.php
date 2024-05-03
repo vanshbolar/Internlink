@@ -8,9 +8,8 @@ if(isset($_POST['save_btn']))
     $username=$_POST['username'];
     $stream=$_POST['stream'];
     $password=$_POST['password'];
-    
 
-    $insert_query = "INSERT INTO mentorr (id,username,password,stream) VALUES('$id','$username','$stream','$password')";
+    $insert_query = "INSERT INTO mentorr (id,username,stream,password) VALUES('$id','$username','$stream','$password')";
     $insert_query_run = mysqli_query($connection,$insert_query);
 
     if($insert_query_run){

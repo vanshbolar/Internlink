@@ -17,8 +17,7 @@ if (isset($_REQUEST['username'])){
 VALUES ('$username','$email', '$password' )";
         $result = mysqli_query($con,$query);
         if($result){
-            echo "<div class='form'>
-<br/>Click here to <a href='login.php'>Login</a></div>";
+                header("Location: ./login.php");
         }
     }else{
 ?>

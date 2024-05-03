@@ -23,9 +23,9 @@
             </a></li>
         </ul>
         <ul class="menu">
-          <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
-          <li class="menu__item"><a class="menu__link" href="#">About</a></li>
-          <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
+          <li class="menu__item"><a class="menu__link" href="./index.php">Home</a></li>
+          <li class="menu__item"><a class="menu__link" href="./about.php">About</a></li>
+          <li class="menu__item"><a class="menu__link" href="./contact.php">Contact</a></li>
     
         </ul>
         <p>&copy;2024 Rovavi | All Rights Reserved</p>
@@ -38,9 +38,7 @@
   <!-- !start #footer -->
   <script>
     
-// Get the button
 let mybutton = document.getElementById("myBtn");
-
 // When the user scrolls down show the button
 window.onscroll = function() {scrollFunction()};
 

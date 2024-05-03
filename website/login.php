@@ -6,10 +6,7 @@
 <head>
 <style>
 </style>
-
-
 </head>
-
 <body style="background-color:rgb(33, 33, 33);">
 <?php
 require('internlink.php');
@@ -84,7 +81,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </div>
 
 
-
 <?php if(isset($error)) { echo $error; } ?>
 </body>
-</html>
+</html> 

@@ -2,7 +2,7 @@
 
     <div class="sidenav-header">
         <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
-        <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/material-dashboard/pages/dashboard " target="_blank">
+        <a class="navbar-brand m-0" href="" style="font-size: large;" target="_blank">
 
             <span class="ms-1 font-weight-bold text-white">Welcome Admin</span>
         </a>
@@ -19,7 +19,7 @@
                 <a class="nav-link text-white " href="./index.php">
 
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="material-icons opacity-10">dashboard</i>
+                        <i class="material-icons opacity-10">person</i>
                     </div>
 
                     <span class="nav-link-text ms-1">Student</span>
@@ -31,7 +31,7 @@
                 <a class="nav-link text-white " href="./indexm.php">
 
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="material-icons opacity-10">dashboard</i>
+                        <i class="material-icons opacity-10">person</i>
                     </div>
 
                     <span class="nav-link-text ms-1">Mentor</span>
@@ -43,7 +43,7 @@
                 <a class="nav-link text-white " href="./indexi.php">
 
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="material-icons opacity-10">receipt_long</i>
+                        <i class="material-icons opacity-10">list</i>
                     </div>
 
                     <span class="nav-link-text ms-1">Internship</span>
@@ -56,7 +56,7 @@
                 <a class="nav-link text-white " href="./indexreg.php">
 
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="material-icons opacity-10">receipt_long</i>
+                        <i class="material-icons opacity-10">list</i>
                     </div>
 
                     <span class="nav-link-text ms-1">Registered</span>
@@ -68,7 +68,7 @@
                 <a class="nav-link text-white " href="./indexc.php">
 
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="material-icons opacity-10">receipt_long</i>
+                        <i class="material-icons opacity-10">list</i>
                     </div>
 
                     <span class="nav-link-text ms-1">Company</span>

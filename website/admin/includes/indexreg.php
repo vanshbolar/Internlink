@@ -50,7 +50,7 @@ if(isset($_SESSION['status']) && $_SESSION['status'] !='')
     <table class="table">
   <thead>
     <tr>
-      <th scope="col">id</th>
+     
       <th scope="col">Name</th>
       <th scope="col">Regno</th>
       <th scope="col">Email</th>
@@ -71,13 +71,20 @@ if(isset($_SESSION['status']) && $_SESSION['status'] !='')
         {
             ?>
             <tr>
-                <td><?php echo $row['id']; ?></td>
+                
                 <td><?php echo $row['name']; ?></td>
                 <td><?php echo $row['regno']; ?></td>
                 <td><?php echo $row['email']; ?></td>
                 <td><?php echo $row['stream']; ?></td>
                 <td><?php echo $row['cname']; ?></td>
                 
+                <td>
+                    <form method="post" action="codereg.php">
+                        <input type="hidden" name="id" class="form-control" value="<?php echo $row['id']; ?>">
+                        <button name="delete_btn" type="submit" class="btn btn-danger btn-sm">Delete </button>    
+                    </form>
+
+                </td>
             </tr>
             <?php
         }

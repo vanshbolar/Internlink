@@ -56,7 +56,7 @@ include('./header.php');
     <input type="text" class="form-control" name="duration" id="exampleInputPassword1" required>
   </div>
   <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Time</label>
+    <label for="exampleInputPassword1" class="form-label">Stipend</label>
     <input type="text" class="form-control" name="time" id="exampleInputPassword1" required>
   </div>
 

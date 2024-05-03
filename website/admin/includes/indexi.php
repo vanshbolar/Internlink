@@ -10,14 +10,11 @@ include('./header.php');
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="d-flex flex-column h-100">
-                                <h2 class="font-weight-bolder mb-0">Internship Info</h2>
+                                <h2 class="font-weight-bolder mb-0">Internship Details</h2>
                             </div>
 
                         </div>
                     </div>
-
-
-
 
         </div>
     </div>
@@ -50,12 +47,12 @@ if(isset($_SESSION['status']) && $_SESSION['status'] !='')
     <table class="table">
   <thead>
     <tr>
-      <th scope="col">id</th>
+      
       <th scope="col">Company name</th>
       <th scope="col">Company description</th>
       <th scope="col">Internship description</th>
       <th scope="col">Duration</th>
-      <th scope="col">Time</th>
+      <th scope="col">Stipend</th>
       <th scope="col"></th>
       <th scope="col"></th>
    
@@ -73,15 +70,13 @@ if(isset($_SESSION['status']) && $_SESSION['status'] !='')
         {
             ?>
             <tr>
-                <td><?php echo $row['cid']; ?></td>
+                
                 <td><?php echo $row['cname']; ?></td>
                 <td><?php echo implode(' ', array_slice(explode(' ', $row['cdesc']), 0, 5)); ?></td>
                 <td><?php echo implode(' ', array_slice(explode(' ', $row['idesc']), 0, 5)); ?></td>
                 <td><?php echo $row['duration']; ?></td>
                 <td><?php echo $row['time']; ?></td>
-                <td>
-                    <a href="editi.php?cid=<?php echo $row['cid']; ?>"  class="btn btn-primary btn-sm">Edit </a>
-                </td>
+                
                 <td>
                     <form method="post" action="codei.php">
                         <input type="hidden" name="cid" class="form-control" value="<?php echo $row['cid']; ?>">

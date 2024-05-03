@@ -10,7 +10,7 @@ include('./header.php');
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="d-flex flex-column h-100">
-                                <h2 class="font-weight-bolder mb-0">Company Info</h2>
+                                <h2 class="font-weight-bolder mb-0">Company Information</h2>
                             </div>
 
                         </div>
